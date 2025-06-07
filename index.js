@@ -38,7 +38,7 @@ app.get("/api/:date", (req, res) => {
   const date = isUnix ? new Date(Number(param)) : new Date();
 
   if (isNaN(date.getTime())) {
-    res.json({"error": "Invalid Date"});
+    return res.json({"error": "Invalid Date"});
   };
 
   res.json({
